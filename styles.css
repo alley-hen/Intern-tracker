@@ -1,0 +1,38 @@
+button{
+    margin: 25px;
+    width: 200px;
+}
+
+i{
+    font-size: 2.5rem; 
+    padding: 5px;
+}
+
+a{
+    color: black;
+}
+.Terrible>i{
+    color: #F03A5F;
+    font-size: 1rem;
+}
+.OK>i{
+    color: #FFDC7D;
+    font-size: 1rem;
+}
+.Great>i{
+    color: #3EC487;
+    font-size: 1rem;
+}
+
+.card{
+    margin-top: 50px;
+}
+
+#root > div > div > div > div > header{
+   background-color: #f4f8f8;
+   font-weight: 600;
+}
+
+#addIntern{
+    margin: 25px 0px;
+}

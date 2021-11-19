@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Intern Tracker</title>
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- nav -->
+        <ah-nav></ah-nav>
+        <!-- Intern grid -->
+        <div class="container">
+            <intern-card></intern-card>
+        </div>
+        <!-- Add intern button -->
+        <div class="container">
+            <button class="button is-dark is-rounded is-medium" @click="showModal">
+                Add New Intern
+            </button>
+        </div>
+        <!-- Modal popup to add additional intern -->
+        <div class="modal is-active" v-show="isVisible">
+            <div class="modal-background" @click="isVisible = false">
+            </div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Add New Intern</p>
+                    <button @click="isVisible = false" class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="field">
+                        <label class="label">Name</label>
+                        <div class="control">
+                            <input v-model="name" class="input is-primary" type="text" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Availability</label>
+                        <div class="control">
+                            <input v-model="availability" class="input is-primary" type="text"
+                                placeholder="Available start date">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Front-end Experience</label>
+                        <div class="control">
+                            <div class="select is-primary">
+                                <select v-model="selectedF">
+                                    <option disabled value="">Select</option>
+                                    <option>Great</option>
+                                    <option>OK</option>
+                                    <option>Terrible</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Back-end Experience</label>
+                        <div class="control">
+                            <div class="select is-primary">
+                                <select v-model="selectedB">
+                                    <option disabled value="">Select</option>
+                                    <option>Great</option>
+                                    <option>OK</option>
+                                    <option>Terrible</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Other Work Experience</label>
+                        <div class="control">
+                            <div class="select is-primary" required>
+                                <select v-model="selectedW">
+                                    <option disabled value="">Select</option>
+                                    <option>Great</option>
+                                    <option>OK</option>
+                                    <option>Terrible</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control">
+                            <input v-model="Email" class="input is-primary" type="email" placeholder="Email address">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button @click="addIntern" id="addIntern" class="button is-primary">Add</button>
+                        </div>
+                    </div>
+            </div>
+            </section>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="main.js"></script>
+
+</body>
+
+</html>
